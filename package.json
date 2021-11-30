@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^16.11.10"
+    "@types/node": "^16.11.10",
+    "nodemon": "^2.0.15",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "ts-node": "^10.4.0"
   }
 }
