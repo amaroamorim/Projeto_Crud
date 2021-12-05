@@ -21,6 +21,15 @@ app.get("/calc/potencia/:param1/:param2", calculadoraController.potencia)
 
 app.get("/calc/raizQuadrada/:param", calculadoraController.raizQuadrada)
 
+app.post("/somar-Varios", calculadoraController.somarVarios)
+
+app.post("/subtrair-Varios", calculadoraController.subtrairVarios)
+
+app.post("/multiplicar-Varios", calculadoraController.multiplicarVarios)
+
+app.post("/dividir-Varios", calculadoraController.dividirVarios)
+
+
 
 
 

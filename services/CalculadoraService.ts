@@ -1,3 +1,5 @@
+import { arrayBuffer } from "stream/consumers"
+
 class CalculadoraService {
 
   async somar(param1, param2) {
@@ -28,5 +30,64 @@ class CalculadoraService {
     return Number(resultado).toFixed(2)
 
   }
+
+  async somarVarios(params) {
+    let acum = 0
+   params.forEach(element => {
+      acum += element.numero
+    });
+    return acum
+    
+  }
+
+
+  async subtrairVarios(params) {
+    let resultado = params[0].numero
+
+    for (let i=1; i< params.length; i++){
+      resultado -= params[i].numero
+    }
+    return resultado
+    
+  }
+
+  async multiplicarVarios(params) {
+    let resultado = params[0].numero
+
+    for (let i=1; i< params.length; i++){
+      resultado *= params[i].numero
+    }
+    return resultado
+    
+  }
+
+  async dividirVarios(params) {
+
+    if (!Array.isArray(params)){
+      throw Error
+    }
+    if (params.length < 2){
+      throw Error
+    }
+
+    let resultado = params[0].numero
+
+    for (let i=1; i< params.length; i++){
+      resultado /= params[i].numero
+    }
+    return resultado
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
 export { CalculadoraService }

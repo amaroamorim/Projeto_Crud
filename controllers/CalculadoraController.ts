@@ -62,6 +62,58 @@ class CalculadoraController {
   }
 
 
+  async somarVarios(req, res){
+    const { numeros } = req.body
+
+    const calcService = new CalculadoraService
+
+    const resultado = await calcService.somarVarios(numeros)
+
+
+    return res.send({ resultado })
+
+  }
+
+  
+  async subtrairVarios(req, res){
+    const { numeros } = req.body
+
+    const calcService = new CalculadoraService
+
+    const resultado = await calcService.subtrairVarios(numeros)
+
+
+    return res.send({ resultado })
+
+  }
+
+  async multiplicarVarios(req, res){
+    const { numeros } = req.body
+
+    const calcService = new CalculadoraService
+
+    const resultado = await calcService.multiplicarVarios(numeros)
+
+
+    return res.send({ resultado })
+
+  }
+
+  async dividirVarios(req, res){
+    const { numeros } = req.body
+
+    const calcService = new CalculadoraService
+
+    try {
+      const resultado = await calcService.dividirVarios(numeros)
+      return res.send({ resultado })
+    } catch(e){
+      res.status(400).json({ error: " Bad Request"})
+    }
+
+    
+  }
+
 }
 
 export { CalculadoraController }
